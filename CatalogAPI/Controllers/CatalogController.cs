@@ -27,7 +27,7 @@ namespace CatalogAPI.Controllers
             return Products;
         }
 
-        [HttpGet("", Name = "GetById")]
+        [HttpGet("{id}", Name = "GetById")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public ActionResult<Product> GetItemById([FromRoute]int id)
         {
@@ -42,7 +42,7 @@ namespace CatalogAPI.Controllers
             }
         }
 
-        [HttpGet("", Name = "AddItem")]
+        [HttpPost("", Name = "AddItem")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         public ActionResult<Product> AddItem([FromBody]Product product)
         {
